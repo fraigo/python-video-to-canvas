@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Python Video to HTML Canvas Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        button{
+            border-radius:7px;
+            border: 1px solid #eee;
+            padding:4px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Python Video to Javascript Demo</h2>
+    <button onclick="player.startVideo()">Play</button>
+    <button onclick="player.stopVideo()">Stop</button>
+    <br>
+    <canvas id=canvas></canvas>
+    <br>
+    <button onclick="video.freq=base_freq*4">Slower</button>
+    <button onclick="video.freq=base_freq*2">Slow</button>
+    <button onclick="video.freq=base_freq">Nomal</button>
+    <button onclick="video.freq=base_freq/2">Fast</button>
+    
+<script src="video.js" ></script>
+<script src="player.js" ></script>
+<script >
+document.body.onload=function(){ 
+    base_freq = video.freq
+    player = new VideoPlayer("canvas", video)
+    player.startVideo()
+}
+</script>
+<br><small id="info"></small>
