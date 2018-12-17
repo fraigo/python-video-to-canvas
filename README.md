@@ -11,6 +11,23 @@ The javascript object can be played in **HTML Canvas** as a sequence of frames w
 
 ## Usage
 
+The main function is `video_convert.video_to_js()`
+
+`video_to_js(video_file_in, width, height, frame_start, frame_end, js_file_out)`
+
+* `video_file_in` : File name to convert
+* `width` : Desired vieport width
+* `height` : Desired viewport height
+* `frame_start` : Initial frame to extract
+* `frame_end` : Last frame to extract
+* `js_file_out` : The output `.js` file to create the video.
+
+The output file is not compressed, so the size is relative to the dimensions of the output in bytes:
+`width` x `height` x 3 (rgb) x `frames` (Example: 118 x 150 x 3 x 15 ~ 780kb).
+
+
+
+
 ### Python code example
 
 ```python
